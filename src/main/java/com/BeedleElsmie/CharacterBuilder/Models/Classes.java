@@ -1,10 +1,22 @@
 package com.BeedleElsmie.CharacterBuilder.Models;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name="classes")
 public class Classes {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @Column(name = "name")
     private String name;
+
+    @Column(name ="index")
     private String index;
+
+    @Column(name = "url")
     private String url;
 
     public Classes(Long id, String name, String index, String url) {
