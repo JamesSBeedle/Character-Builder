@@ -19,7 +19,7 @@ public class Equipment {
     @Column(name ="url")
     private String url;
 
-    public Equipment(Long id, String name, String index, String url) {
+    public Equipment(String name, String index, String url) {
         this.id = id;
         this.name = name;
         this.index = index;

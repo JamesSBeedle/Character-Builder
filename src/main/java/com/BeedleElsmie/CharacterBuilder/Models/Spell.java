@@ -19,8 +19,7 @@ public class Spell {
     @Column(name = "url")
     private String url;
 
-    public Spell(Long id, String name, String index, String url) {
-        this.id = id;
+    public Spell(String name, String index, String url) {
         this.name = name;
         this.index = index;
         this.url = url;

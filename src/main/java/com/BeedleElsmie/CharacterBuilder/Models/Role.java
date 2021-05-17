@@ -19,8 +19,7 @@ public class Role {
     @Column(name = "url")
     private String url;
 
-    public Role(Long id, String name, String index, String url) {
-        this.id = id;
+    public Role(String name, String index, String url) {
         this.name = name;
         this.index = index;
         this.url = url;

@@ -19,8 +19,7 @@ public class Skill {
     @Column(name = "url")
     private String url;
 
-    public Skill(Long id, String name, String index, String url) {
-        this.id = id;
+    public Skill(String name, String index, String url) {
         this.name = name;
         this.index = index;
         this.url = url;

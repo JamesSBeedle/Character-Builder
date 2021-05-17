@@ -19,8 +19,7 @@ public class Feat {
     @Column(name = "url")
     private String url;
 
-    public Feat(Long id, String name, String index, String url) {
-        this.id = id;
+    public Feat(String name, String index, String url) {
         this.name = name;
         this.index = index;
         this.url = url;
