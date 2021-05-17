@@ -21,12 +21,12 @@ public class RoleController {
     }
 
     @GetMapping(value="/roles/{id}")
-    public ResponseEntity getClass(@PathVariable Long id){
+    public ResponseEntity getRole(@PathVariable Long id){
         return new ResponseEntity(roleRepository.findById(id), HttpStatus.OK);
     }
 
     @PostMapping(value = "/roles")
-    public ResponseEntity<List<Role>> postClass(@RequestBody List<Role> roles){
+    public ResponseEntity<List<Role>> postRole(@RequestBody List<Role> roles){
         roleRepository.saveAll(roles);
         return new ResponseEntity<>(roles, HttpStatus.CREATED);
     }

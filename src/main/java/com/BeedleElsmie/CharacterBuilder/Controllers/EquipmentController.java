@@ -16,7 +16,7 @@ public class EquipmentController {
     EquipmentRepository equipmentRepository;
 
     @GetMapping(value = "/equipments")
-    public ResponseEntity getAllEquipment(){
+    public ResponseEntity getAllEquipments(){
         return new ResponseEntity(equipmentRepository.findAll(), HttpStatus.OK);
     }
 
