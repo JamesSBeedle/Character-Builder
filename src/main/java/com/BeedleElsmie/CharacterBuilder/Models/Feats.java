@@ -1,26 +1,27 @@
 package com.BeedleElsmie.CharacterBuilder.Models;
 
-public class Spells {
+public class Feats {
 
     private Long id;
     private String name;
     private String index;
     private String url;
 
-    public Spells(Long id, String name, String index, String url) {
+    public Feats(Long id, String name, String index, String url) {
         this.id = id;
         this.name = name;
         this.index = index;
         this.url = url;
     }
 
-    public Spells () {
-        
+    public Feats () {
+
     }
 
     public Long getId() {
         return id;
     }
+
 
     public void setId(Long id) {
         this.id = id;

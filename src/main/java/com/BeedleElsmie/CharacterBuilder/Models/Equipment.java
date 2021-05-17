@@ -1,21 +1,21 @@
 package com.BeedleElsmie.CharacterBuilder.Models;
 
-public class Spells {
+public class Equipment {
 
     private Long id;
     private String name;
     private String index;
     private String url;
 
-    public Spells(Long id, String name, String index, String url) {
+    public Equipment(Long id, String name, String index, String url) {
         this.id = id;
         this.name = name;
         this.index = index;
         this.url = url;
     }
 
-    public Spells () {
-        
+    public Equipment(){
+
     }
 
     public Long getId() {

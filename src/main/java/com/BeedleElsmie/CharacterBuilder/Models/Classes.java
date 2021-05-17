@@ -14,6 +14,10 @@ public class Classes {
         this.url = url;
     }
 
+    public Classes() {
+
+    }
+
     public Long getId() {
         return id;
     }

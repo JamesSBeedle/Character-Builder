@@ -14,6 +14,10 @@ public class Races {
         this.url = url;
     }
 
+    public Races () {
+
+    }
+
     public Long getId() {
         return id;
     }
