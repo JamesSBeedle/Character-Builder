@@ -3,8 +3,8 @@ package com.BeedleElsmie.CharacterBuilder.Models;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "races")
-public class Races {
+@Table(name = "feats")
+public class Feat {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -19,20 +19,21 @@ public class Races {
     @Column(name = "url")
     private String url;
 
-    public Races(Long id, String name, String index, String url) {
+    public Feat(Long id, String name, String index, String url) {
         this.id = id;
         this.name = name;
         this.index = index;
         this.url = url;
     }
 
-    public Races () {
+    public Feat() {
 
     }
 
     public Long getId() {
         return id;
     }
+
 
     public void setId(Long id) {
         this.id = id;
