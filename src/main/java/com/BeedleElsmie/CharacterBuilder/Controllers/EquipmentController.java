@@ -24,7 +24,7 @@ public class EquipmentController {
     public ResponseEntity getEquipment(@PathVariable Long id) {
         return new ResponseEntity(equipmentRepository.findById(id), HttpStatus.OK);
     }
-    
+
     @PostMapping(value = "/equipments")
     public ResponseEntity<List<Equipment>> postEquipment(@RequestBody List<Equipment> equipments){
         equipmentRepository.saveAll(equipments);
