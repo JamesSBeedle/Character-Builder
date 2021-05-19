@@ -13,21 +13,23 @@ public class Equipment {
     @Column(name="name")
     private String name;
 
-    @Column(name ="index")
-    private String index;
+    @Column(name ="quantity")
+    private int quantity;
 
-    @Column(name ="url")
-    private String url;
+    @Column(name ="weight")
+    private int weight;
 
-    public Equipment(String name, String index, String url) {
-        this.id = id;
+    @Column(name = "cost")
+    private int cost;
+
+    public Equipment(String name, int quantity, int weight, int cost) {
         this.name = name;
-        this.index = index;
-        this.url = url;
+        this.quantity = quantity;
+        this.weight = weight;
+        this.cost = cost;
     }
 
-    public Equipment(){
-
+    public Equipment() {
     }
 
     public Long getId() {
@@ -46,19 +48,27 @@ public class Equipment {
         this.name = name;
     }
 
-    public String getIndex() {
-        return index;
+    public int getQuantity() {
+        return quantity;
     }
 
-    public void setIndex(String index) {
-        this.index = index;
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
     }
 
-    public String getUrl() {
-        return url;
+    public int getWeight() {
+        return weight;
     }
 
-    public void setUrl(String url) {
-        this.url = url;
+    public void setWeight(int weight) {
+        this.weight = weight;
+    }
+
+    public int getCost() {
+        return cost;
+    }
+
+    public void setCost(int cost) {
+        this.cost = cost;
     }
 }
