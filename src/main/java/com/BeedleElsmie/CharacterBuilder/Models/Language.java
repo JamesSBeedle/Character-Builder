@@ -2,6 +2,7 @@ package com.BeedleElsmie.CharacterBuilder.Models;
 
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -21,18 +22,18 @@ public class Language {
     @Column(name = "script")
     private String script;
 
-    @Column(name = "typical_speakers")
-    private List<String> typicalSpeakers;
+    @Column(name = "typical-speakers")
+    private ArrayList<String> typicalSpeakers;
 
     @Column(name = "description")
     private String description;
 
 
-    public Language(String name, String type, String script, List<String> typicalSpeakers, String description) {
+    public Language(String name, String type, String script, ArrayList<String> typicalSpeakers, String description) {
         this.name = name;
         this.type = type;
         this.script = script;
-        this.typicalSpeakers = typicalSpeakers;
+        this.typicalSpeakers = new ArrayList<>();
         this.description = description;
     }
 
@@ -71,11 +72,11 @@ public class Language {
         this.script = script;
     }
 
-    public List<String> getTypicalSpeakers() {
+    public ArrayList<String> getTypicalSpeakers() {
         return typicalSpeakers;
     }
 
-    public void setTypicalSpeakers(List<String> typicalSpeakers) {
+    public void setTypicalSpeakers(ArrayList<String> typicalSpeakers) {
         this.typicalSpeakers = typicalSpeakers;
     }
 
