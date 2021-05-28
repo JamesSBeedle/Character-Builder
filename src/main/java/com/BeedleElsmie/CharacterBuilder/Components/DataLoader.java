@@ -50,9 +50,9 @@
 //        Race race2 = new Race("Elf", "elf", "elf.com");
 //        raceRepository.save(race2);
 //
-//        Role role1 = new Role("Cleric", "cleric", "cleric.com");
+//        Role.java role1 = new Role.java("Cleric", "cleric", "cleric.com");
 //        roleRepository.save(role1);
-//        Role role2 = new Role("Fighter", "fighter", "fighter.com");
+//        Role.java role2 = new Role.java("Fighter", "fighter", "fighter.com");
 //        roleRepository.save(role2);
 //
 //        Skill skill1 = new Skill("Acrobatics", "acrobatics", "acrobatics.com");
