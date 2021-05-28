@@ -43,8 +43,11 @@ public class Spell {
     @Column(name = "attack-type")
     private String attackType;
 
-    @Column(name = "damage")
-    private Damage damage;
+    @Column(name = "damage-type")
+    private String damageType;
+
+    @Column(name = "damage-at-slot-level")
+    private String damageAtSlotLevel;
 
     @Column(name = "school")
     private String school;
@@ -59,7 +62,7 @@ public class Spell {
     private int level;
 
 
-    public Spell(String name, String description, String higherLevel, int range, String components, String materials, boolean ritual, int duration, String castingTime, boolean concentration, String attackType, Damage damage, String school, ArrayList<SubClass> subClass, int level) {
+    public Spell(String name, String description, String higherLevel, int range, String components, String materials, boolean ritual, int duration, String castingTime, boolean concentration, String attackType, String damageType, String damageAtSlotLevel, String school, ArrayList<SubClass> subClass, int level) {
         this.name = name;
         this.description = description;
         this.higherLevel = higherLevel;
@@ -71,7 +74,8 @@ public class Spell {
         this.castingTime = castingTime;
         this.concentration = concentration;
         this.attackType = attackType;
-        this.damage = damage;
+        this.damageType = damageType;
+        this.damageAtSlotLevel = damageAtSlotLevel;
         this.school = school;
         this.subClass = subClass;
         this.level = level;
@@ -79,14 +83,6 @@ public class Spell {
 
     public Spell() {
 
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 
     public String getName() {
@@ -177,12 +173,20 @@ public class Spell {
         this.attackType = attackType;
     }
 
-    public Damage getDamage() {
-        return damage;
+    public String getDamageType() {
+        return damageType;
     }
 
-    public void setDamage(Damage damage) {
-        this.damage = damage;
+    public void setDamageType(String damageType) {
+        this.damageType = damageType;
+    }
+
+    public String getDamageAtSlotLevel() {
+        return damageAtSlotLevel;
+    }
+
+    public void setDamageAtSlotLevel(String damageAtSlotLevel) {
+        this.damageAtSlotLevel = damageAtSlotLevel;
     }
 
     public String getSchool() {
