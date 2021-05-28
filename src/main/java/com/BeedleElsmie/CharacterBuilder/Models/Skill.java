@@ -13,16 +13,16 @@ public class Skill {
     @Column(name = "name")
     private String name;
 
-    @Column(name = "index")
-    private String index;
+    @Column(name = "description")
+    private String description;
 
-    @Column(name = "url")
-    private String url;
+    @Column(name = "ability-score")
+    private int abilityScore;
 
-    public Skill(String name, String index, String url) {
+    public Skill(String name, String description, int abilityScore) {
         this.name = name;
-        this.index = index;
-        this.url = url;
+        this.description = description;
+        this.abilityScore = abilityScore;
     }
 
     public Skill() {
@@ -45,19 +45,20 @@ public class Skill {
         this.name = name;
     }
 
-    public String getIndex() {
-        return index;
+
+    public String getDescription() {
+        return description;
     }
 
-    public void setIndex(String index) {
-        this.index = index;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
-    public String getUrl() {
-        return url;
+    public int getAbilityScore() {
+        return abilityScore;
     }
 
-    public void setUrl(String url) {
-        this.url = url;
+    public void setAbilityScore(int abilityScore) {
+        this.abilityScore = abilityScore;
     }
 }
