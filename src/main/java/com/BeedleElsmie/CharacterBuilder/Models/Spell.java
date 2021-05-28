@@ -13,11 +13,11 @@ public class Spell {
     @Column(name = "name")
     private String name;
 
-    @Column(name = "description")
-    private String description;
+    @Column(name = "desc")
+    private String desc;
 
     @Column(name = "higher-level")
-    private String higherLevel;
+    private String higher_level;
 
     @Column(name = "range")
     private int range;
@@ -25,64 +25,71 @@ public class Spell {
     @Column(name = "components")
     private String components;
 
-    @Column(name ="materials")
-    private String materials;
+    @Column(name ="material")
+    private String material;
 
     @Column(name = "ritual")
     private boolean ritual;
 
     @Column(name = "duration")
-    private int duration;
+    private String duration;
 
     @Column(name = "casting-time")
-    private String castingTime;
+    private String casting_time;
 
     @Column(name = "concentration")
     private boolean concentration;
 
     @Column(name = "attack-type")
-    private String attackType;
+    private String attack_type;
 
     @Column(name = "damage-type")
-    private String damageType;
+    private String damage_type;
 
     @Column(name = "damage-at-slot-level")
-    private String damageAtSlotLevel;
+    private String damage_at_slot_level;
 
     @Column(name = "school")
     private String school;
 
-    @Column(name = "class")
-    private ArrayList<Role> class;
+    @Column(name = "classes")
+    private ArrayList<Role> classes;
 
-    @Column(name = "sub-class")
-    private ArrayList<SubClass> subClass;
+    @Column(name = "subclass")
+    private ArrayList<SubClass> subclass;
 
     @Column(name = "level")
     private int level;
 
-
-    public Spell(String name, String description, String higherLevel, int range, String components, String materials, boolean ritual, int duration, String castingTime, boolean concentration, String attackType, String damageType, String damageAtSlotLevel, String school, ArrayList<SubClass> subClass, int level) {
+    public Spell(String name, String desc, String higher_level, int range, String components, String material, boolean ritual, String duration, String casting_time, boolean concentration, String attack_type, String damage_type, String damage_at_slot_level, String school, ArrayList<Role> classes, ArrayList<SubClass> subclass, int level) {
         this.name = name;
-        this.description = description;
-        this.higherLevel = higherLevel;
+        this.desc = desc;
+        this.higher_level = higher_level;
         this.range = range;
         this.components = components;
-        this.materials = materials;
+        this.material = material;
         this.ritual = ritual;
         this.duration = duration;
-        this.castingTime = castingTime;
+        this.casting_time = casting_time;
         this.concentration = concentration;
-        this.attackType = attackType;
-        this.damageType = damageType;
-        this.damageAtSlotLevel = damageAtSlotLevel;
+        this.attack_type = attack_type;
+        this.damage_type = damage_type;
+        this.damage_at_slot_level = damage_at_slot_level;
         this.school = school;
-        this.subClass = subClass;
+        this.classes = classes;
+        this.subclass = subclass;
         this.level = level;
     }
 
     public Spell() {
+    }
 
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -93,20 +100,20 @@ public class Spell {
         this.name = name;
     }
 
-    public String getDescription() {
-        return description;
+    public String getDesc() {
+        return desc;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setDesc(String desc) {
+        this.desc = desc;
     }
 
-    public String getHigherLevel() {
-        return higherLevel;
+    public String getHigher_level() {
+        return higher_level;
     }
 
-    public void setHigherLevel(String higherLevel) {
-        this.higherLevel = higherLevel;
+    public void setHigher_level(String higher_level) {
+        this.higher_level = higher_level;
     }
 
     public int getRange() {
@@ -125,12 +132,12 @@ public class Spell {
         this.components = components;
     }
 
-    public String getMaterials() {
-        return materials;
+    public String getMaterial() {
+        return material;
     }
 
-    public void setMaterials(String materials) {
-        this.materials = materials;
+    public void setMaterial(String material) {
+        this.material = material;
     }
 
     public boolean isRitual() {
@@ -141,20 +148,20 @@ public class Spell {
         this.ritual = ritual;
     }
 
-    public int getDuration() {
+    public String getDuration() {
         return duration;
     }
 
-    public void setDuration(int duration) {
+    public void setDuration(String duration) {
         this.duration = duration;
     }
 
-    public String getCastingTime() {
-        return castingTime;
+    public String getCasting_time() {
+        return casting_time;
     }
 
-    public void setCastingTime(String castingTime) {
-        this.castingTime = castingTime;
+    public void setCasting_time(String casting_time) {
+        this.casting_time = casting_time;
     }
 
     public boolean isConcentration() {
@@ -165,28 +172,28 @@ public class Spell {
         this.concentration = concentration;
     }
 
-    public String getAttackType() {
-        return attackType;
+    public String getAttack_type() {
+        return attack_type;
     }
 
-    public void setAttackType(String attackType) {
-        this.attackType = attackType;
+    public void setAttack_type(String attack_type) {
+        this.attack_type = attack_type;
     }
 
-    public String getDamageType() {
-        return damageType;
+    public String getDamage_type() {
+        return damage_type;
     }
 
-    public void setDamageType(String damageType) {
-        this.damageType = damageType;
+    public void setDamage_type(String damage_type) {
+        this.damage_type = damage_type;
     }
 
-    public String getDamageAtSlotLevel() {
-        return damageAtSlotLevel;
+    public String getDamage_at_slot_level() {
+        return damage_at_slot_level;
     }
 
-    public void setDamageAtSlotLevel(String damageAtSlotLevel) {
-        this.damageAtSlotLevel = damageAtSlotLevel;
+    public void setDamage_at_slot_level(String damage_at_slot_level) {
+        this.damage_at_slot_level = damage_at_slot_level;
     }
 
     public String getSchool() {
@@ -197,12 +204,20 @@ public class Spell {
         this.school = school;
     }
 
-    public ArrayList<SubClass> getSubClass() {
-        return subClass;
+    public ArrayList<Role> getClasses() {
+        return classes;
     }
 
-    public void setSubClass(ArrayList<SubClass> subClass) {
-        this.subClass = subClass;
+    public void setClasses(ArrayList<Role> classes) {
+        this.classes = classes;
+    }
+
+    public ArrayList<SubClass> getSubclass() {
+        return subclass;
+    }
+
+    public void setSubclass(ArrayList<SubClass> subclass) {
+        this.subclass = subclass;
     }
 
     public int getLevel() {
