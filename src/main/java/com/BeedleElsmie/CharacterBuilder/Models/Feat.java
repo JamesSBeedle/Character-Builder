@@ -13,16 +13,24 @@ public class Feat {
     @Column(name = "name")
     private String name;
 
-    @Column(name = "index")
-    private String index;
+    @Column(name = "level")
+    private String level;
 
-    @Column(name = "url")
-    private String url;
+    @Column(name = "prerequisites")
+    private String prerequisites;
 
-    public Feat(String name, String index, String url) {
+    @Column(name = "description")
+    private String description;
+
+    @Column(name = "class")
+    private ArrayList<Role> role;
+
+    public Feat(String name, String level, String prerequisites, String description, ArrayList<Role> role) {
         this.name = name;
-        this.index = index;
-        this.url = url;
+        this.level = level;
+        this.prerequisites = prerequisites;
+        this.description = description;
+        this.role = role;
     }
 
     public Feat() {
@@ -46,19 +54,35 @@ public class Feat {
         this.name = name;
     }
 
-    public String getIndex() {
-        return index;
+    public String getLevel() {
+        return level;
     }
 
-    public void setIndex(String index) {
-        this.index = index;
+    public void setLevel(String level) {
+        this.level = level;
     }
 
-    public String getUrl() {
-        return url;
+    public String getPrerequisites() {
+        return prerequisites;
     }
 
-    public void setUrl(String url) {
-        this.url = url;
+    public void setPrerequisites(String prerequisites) {
+        this.prerequisites = prerequisites;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public ArrayList<Role> getRole() {
+        return role;
+    }
+
+    public void setRole(ArrayList<Role> role) {
+        this.role = role;
     }
 }
