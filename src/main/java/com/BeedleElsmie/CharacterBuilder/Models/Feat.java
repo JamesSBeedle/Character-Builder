@@ -14,7 +14,7 @@ public class Feat {
     private String name;
 
     @Column(name = "level")
-    private String level;
+    private int level;
 
     @Column(name = "prerequisites")
     private String prerequisites;
@@ -25,7 +25,7 @@ public class Feat {
     @Column(name = "class")
     private ArrayList<Role> role;
 
-    public Feat(String name, String level, String prerequisites, String description, ArrayList<Role> role) {
+    public Feat(String name, int level, String prerequisites, String description, ArrayList<Role> role) {
         this.name = name;
         this.level = level;
         this.prerequisites = prerequisites;
@@ -54,11 +54,11 @@ public class Feat {
         this.name = name;
     }
 
-    public String getLevel() {
+    public int getLevel() {
         return level;
     }
 
-    public void setLevel(String level) {
+    public void setLevel(int level) {
         this.level = level;
     }
 
