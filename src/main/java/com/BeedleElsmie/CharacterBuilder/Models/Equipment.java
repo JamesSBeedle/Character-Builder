@@ -1,6 +1,7 @@
 package com.BeedleElsmie.CharacterBuilder.Models;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 
 @Entity
 @Table(name = "equipments")
@@ -25,8 +26,11 @@ public class Equipment {
     @Column(name = "category-range")
     private String categoryRange;
 
-    @Column(name = "damage")
-    private Damage damage;
+    @Column(name = "damage-dice")
+    private String damageDice;
+
+    @Column(name = "damage-type")
+    private String damageType;
 
     @Column(name = "range")
     private int range;
@@ -34,8 +38,8 @@ public class Equipment {
     @Column(name = "properties")
     private ArrayList<Property> properties;
 
-    @Column(name = "two-handed")
-    private Damage twoHanded;
+    @Column(name = "two-handed-damage")
+    private String twoHandedDamage;
 
     @Column(name = "armor-class")
     private int armorClass;
@@ -58,16 +62,17 @@ public class Equipment {
     @Column(name = "cost")
     private int cost;
 
-    public Equipment(String name, String equipmentCategory, String gearCategory, String weaponCategory, String categoryRange, Damage damage, int range, ArrayList<Property> properties, Damage twoHanded, int armorClass, int strMin, boolean stealthDisadvantage, String vehicleCategory, String description, int weight, int cost) {
+    public Equipment(String name, String equipmentCategory, String gearCategory, String weaponCategory, String categoryRange, String damageDice, String damageType, int range, ArrayList<Property> properties, String twoHandedDamage, int armorClass, int strMin, boolean stealthDisadvantage, String vehicleCategory, String description, int weight, int cost) {
         this.name = name;
         this.equipmentCategory = equipmentCategory;
         this.gearCategory = gearCategory;
         this.weaponCategory = weaponCategory;
         this.categoryRange = categoryRange;
-        this.damage = damage;
+        this.damageDice = damageDice;
+        this.damageType = damageType;
         this.range = range;
         this.properties = properties;
-        this.twoHanded = twoHanded;
+        this.twoHandedDamage = twoHandedDamage;
         this.armorClass = armorClass;
         this.strMin = strMin;
         this.stealthDisadvantage = stealthDisadvantage;
@@ -80,37 +85,12 @@ public class Equipment {
     public Equipment() {
     }
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
     public String getName() {
         return name;
     }
 
     public void setName(String name) {
         this.name = name;
-    }
-
-
-    public int getWeight() {
-        return weight;
-    }
-
-    public void setWeight(int weight) {
-        this.weight = weight;
-    }
-
-    public int getCost() {
-        return cost;
-    }
-
-    public void setCost(int cost) {
-        this.cost = cost;
     }
 
     public String getEquipmentCategory() {
@@ -145,12 +125,20 @@ public class Equipment {
         this.categoryRange = categoryRange;
     }
 
-    public Damage getDamage() {
-        return damage;
+    public String getDamageDice() {
+        return damageDice;
     }
 
-    public void setDamage(Damage damage) {
-        this.damage = damage;
+    public void setDamageDice(String damageDice) {
+        this.damageDice = damageDice;
+    }
+
+    public String getDamageType() {
+        return damageType;
+    }
+
+    public void setDamageType(String damageType) {
+        this.damageType = damageType;
     }
 
     public int getRange() {
@@ -169,12 +157,12 @@ public class Equipment {
         this.properties = properties;
     }
 
-    public Damage getTwoHanded() {
-        return twoHanded;
+    public String getTwoHandedDamage() {
+        return twoHandedDamage;
     }
 
-    public void setTwoHanded(Damage twoHanded) {
-        this.twoHanded = twoHanded;
+    public void setTwoHandedDamage(String twoHandedDamage) {
+        this.twoHandedDamage = twoHandedDamage;
     }
 
     public int getArmorClass() {
@@ -215,5 +203,21 @@ public class Equipment {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public int getWeight() {
+        return weight;
+    }
+
+    public void setWeight(int weight) {
+        this.weight = weight;
+    }
+
+    public int getCost() {
+        return cost;
+    }
+
+    public void setCost(int cost) {
+        this.cost = cost;
     }
 }

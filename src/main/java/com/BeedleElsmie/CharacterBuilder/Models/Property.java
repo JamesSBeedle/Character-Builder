@@ -4,7 +4,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "properties")
-public class Properties {
+public class Property {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -17,12 +17,12 @@ public class Properties {
     private String description;
 
 
-    public Properties(String name, String description) {
+    public Property(String name, String description) {
         this.name = name;
         this.description = description;
     }
 
-    public Properties() {
+    public Property() {
     }
 
     public Long getId() {
