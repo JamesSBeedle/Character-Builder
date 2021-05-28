@@ -45,7 +45,7 @@ public class Race {
     private ArrayList<Trait> traits;
 
     @Column(name = "trait-options")
-    private ArrayList<Trait>;
+    private ArrayList<Trait>trait_options;
 
     @Column(name = "sub-races")
     private ArrayList<SubRace> subRaces;

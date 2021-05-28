@@ -1,6 +1,7 @@
 package com.BeedleElsmie.CharacterBuilder.Models;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 
 @Entity
 @Table(name = "spells")

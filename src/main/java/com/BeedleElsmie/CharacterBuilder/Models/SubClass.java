@@ -15,8 +15,8 @@ public class SubClass {
     @Column(name = "name")
     private String name;
 
-    @Column(name = "class")
-    private String class;
+    @Column(name = "role")
+    private String role;
 
     @Column(name = "subclass_flavour")
     private String subclass_flavour;
@@ -27,8 +27,9 @@ public class SubClass {
     @Column(name ="description")
     private String description;
 
-    public SubClass(String name, String subclass_flavour, ArrayList<Spell> spells, String description) {
+    public SubClass(String name, String role, String subclass_flavour, ArrayList<Spell> spells, String description) {
         this.name = name;
+        this.role = role;
         this.subclass_flavour = subclass_flavour;
         this.spells = spells;
         this.description = description;
@@ -67,5 +68,21 @@ public class SubClass {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public Long getId() {
+        return Id;
+    }
+
+    public void setId(Long id) {
+        Id = id;
+    }
+
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
     }
 }
