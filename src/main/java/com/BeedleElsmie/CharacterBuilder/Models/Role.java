@@ -1,6 +1,9 @@
 package com.BeedleElsmie.CharacterBuilder.Models;
 
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import org.hibernate.annotations.Cascade;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 
@@ -30,7 +33,9 @@ public class Role {
     @Column(name = "starting_equipment_options")
     private ArrayList<Equipment> starting_equipment_options;
 
-    @Column(name = "subclass")
+    @OneToMany(mappedBy = "role")
+    @Cascade(org.hibernate.annotations.CascadeType.DELETE)
+    @JsonBackReference
     private ArrayList<SubClass> subclass;
 
     @Column(name = "spellcasting_ability")

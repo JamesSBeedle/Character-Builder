@@ -15,7 +15,8 @@ public class SubClass {
     @Column(name = "name")
     private String name;
 
-    @Column(name = "role")
+    @ManyToOne
+    @JoinColumn(name = "role_id", nullable = false)
     private String role;
 
     @Column(name = "subclass_flavour")
