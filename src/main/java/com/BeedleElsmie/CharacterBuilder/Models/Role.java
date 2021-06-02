@@ -27,6 +27,20 @@ public class Role {
     @Column(name = "saving_throws")
     private String saving_throws;
 
+    @ManyToMany(cascade=CascadeType.ALL)
+    @JoinTable(
+            name = "roles_equipment",
+            joinColumns = { @JoinColumn(
+                    name = "role_id",
+                    nullable = false,
+                    updatable = false)
+            },
+            inverseJoinColumns = {@JoinColumn(
+                    name = "equipment_id",
+                    nullable = false,
+                    updatable = false)
+            }
+    )
     @Column(name = "starting_equipment")
     private ArrayList<Equipment> starting_equipment;
 

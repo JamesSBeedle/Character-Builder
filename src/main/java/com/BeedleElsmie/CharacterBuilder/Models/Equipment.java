@@ -1,5 +1,7 @@
 package com.BeedleElsmie.CharacterBuilder.Models;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 
@@ -62,7 +64,24 @@ public class Equipment {
     @Column(name = "cost")
     private int cost;
 
-    public Equipment(String name, String equipmentCategory, String gearCategory, String weaponCategory, String categoryRange, String damageDice, String damageType, int range, ArrayList<Property> properties, String twoHandedDamage, int armorClass, int strMin, boolean stealthDisadvantage, String vehicleCategory, String description, int weight, int cost) {
+    @ManyToMany(cascade=CascadeType.ALL)
+    @JsonBackReference
+    @JoinTable(
+            name = "roles_equipment",
+            joinColumns = { @JoinColumn(
+                    name = "equipment_id",
+                    nullable = false,
+                    updatable = false)
+            },
+            inverseJoinColumns = {@JoinColumn(
+                    name = "role_id",
+                    nullable = false,
+                    updatable = false)
+            }
+    )
+    private ArrayList<Role> rolesStartingEquipment;
+
+    public Equipment(String name, String equipmentCategory, String gearCategory, String weaponCategory, String categoryRange, String damageDice, String damageType, int range, ArrayList<Property> properties, String twoHandedDamage, int armorClass, int strMin, boolean stealthDisadvantage, String vehicleCategory, String description, int weight, int cost, ArrayList<Role> rolesStartingEquipment) {
         this.name = name;
         this.equipmentCategory = equipmentCategory;
         this.gearCategory = gearCategory;
@@ -80,6 +99,7 @@ public class Equipment {
         this.description = description;
         this.weight = weight;
         this.cost = cost;
+        this.rolesStartingEquipment = rolesStartingEquipment;
     }
 
     public Equipment() {
@@ -219,5 +239,13 @@ public class Equipment {
 
     public void setCost(int cost) {
         this.cost = cost;
+    }
+
+    public ArrayList<Role> getRolesStartingEquipment() {
+        return rolesStartingEquipment;
+    }
+
+    public void setRolesStartingEquipment(ArrayList<Role> rolesStartingEquipment) {
+        this.rolesStartingEquipment = rolesStartingEquipment;
     }
 }
